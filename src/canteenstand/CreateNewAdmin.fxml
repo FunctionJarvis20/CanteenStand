@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="createnewadmin" prefHeight="730.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteenstand.CreateNewAdminController">
+   <children>
+      <FontAwesomeIconView fontSmoothingType="LCD" glyphName="USER_PLUS" layoutX="214.0" layoutY="262.0" size="180" stroke="#00afff" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="3.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="16.56" radius="11.855" spread="0.1" width="32.86" />
+         </effect></FontAwesomeIconView>
+      <Label layoutX="51.0" layoutY="11.0" text="Create NewAdmin Account">
+         <font>
+            <Font name="Times New Roman" size="46.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="full_name" focusColor="#1e3989" labelFloat="true" layoutX="213.0" layoutY="329.0" prefHeight="40.0" prefWidth="324.0" promptText="Enter Full Name" unFocusColor="#00afff">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="email_address" focusColor="#1e3989" labelFloat="true" layoutX="213.0" layoutY="409.0" prefHeight="40.0" prefWidth="324.0" promptText="Enter Email Address" unFocusColor="#00afff">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="create_username" focusColor="#1e3989" labelFloat="true" layoutX="213.0" layoutY="497.0" prefHeight="40.0" prefWidth="324.0" promptText="Create New Admin Username" unFocusColor="#00afff">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="create_password" focusColor="#1e3989" labelFloat="true" layoutX="213.0" layoutY="583.0" prefHeight="40.0" prefWidth="324.0" promptText="Create New Admin Password" unFocusColor="#00afff">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="231.0" layoutY="644.0" onAction="#createAdminAccount" prefHeight="62.0" prefWidth="188.0" style="-fx-background-color: #00afff; -fx-background-radius: 30;" text="Create Admin">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIconView glyphName="AMAZON" layoutX="139.0" layoutY="371.0" size="35" stroke="#00a9f2" strokeType="OUTSIDE" />
+      <FontAwesomeIconView glyphName="ENVELOPE" layoutX="139.0" layoutY="448.0" size="35" stroke="#00a9f2" strokeType="OUTSIDE" />
+      <FontAwesomeIconView glyphName="USER_PLUS" layoutX="139.0" layoutY="538.0" size="35" stroke="#00a9f2" strokeType="OUTSIDE" />
+      <FontAwesomeIconView glyphName="LOCK" layoutX="139.0" layoutY="623.0" size="35" stroke="#00a9f2" strokeType="OUTSIDE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" fx:id="adminloginscreen" prefHeight="800.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteenstand.StartApplicationController">
+    <stylesheets>
+        <URL value="@application.css" />
+    </stylesheets>
+   <children>
+      <JFXTabPane layoutX="361.0" layoutY="43.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="ADMIN">
+               <content>
+                  <AnchorPane fx:id="adminlogin" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="799.0">
+                     <children>
+                        <FontAwesomeIconView fontSmoothingType="LCD" glyphName="USER_SECRET" layoutX="503.0" layoutY="334.0" size="250" stroke="#00afff" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="3.0" wrappingWidth="199.2857208251953">
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" color="#615959" height="35.83" radius="16.6725" spread="0.1" width="32.86" />
+                           </effect>
+                        </FontAwesomeIconView>
+                        <FontAwesomeIconView glyphName="USER" layoutX="359.0" layoutY="474.0" size="35" stroke="#00afff" />
+                        <FontAwesomeIconView glyphName="KEY" layoutX="359.0" layoutY="568.0" size="35" stroke="#00afff" />
+                        <JFXTextField fx:id="admin_username" focusColor="#1e3989" labelFloat="true" layoutX="440.0" layoutY="440.0" prefHeight="44.0" prefWidth="342.0" promptText="Enter Admin username" unFocusColor="#00afff">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="admin_password" focusColor="#1e3989" labelFloat="true" layoutX="440.0" layoutY="534.0" prefHeight="44.0" prefWidth="342.0" promptText="Enter Admin Password" unFocusColor="#00afff">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton layoutX="440.0" layoutY="636.0" onAction="#adminLogin" prefHeight="61.0" prefWidth="113.0" style="-fx-background-radius: 30; -fx-background-color: #00afff;" text="Login">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="573.0" layoutY="636.0" onAction="#adminCreateNewAdmin" prefHeight="61.0" prefWidth="209.0" style="-fx-background-color: #00afff; -fx-background-radius: 30;" text="Create New Admin">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="475.0" layoutY="40.0" prefHeight="51.0" prefWidth="256.0" text="Admin Login">
+                           <font>
+                              <Font name="Times New Roman" size="46.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab disable="true" text="Workers">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="User ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <WebView fx:id="webview" layoutY="7.0" prefHeight="765.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>
