@@ -72,7 +72,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="food_id" labelFloat="true" prefHeight="36.0" prefWidth="395.0" promptText="Enter Food ID" GridPane.columnIndex="1">
+            <JFXTextField fx:id="food_id" editable="false" labelFloat="true" prefHeight="36.0" prefWidth="395.0" promptText="Enter Food ID" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="60.0" right="60.0" />
                </GridPane.margin>

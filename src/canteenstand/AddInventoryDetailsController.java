@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,31 +42,37 @@ public class AddInventoryDetailsController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		food_id.setText(Integer.toString(AddInventoryDetailsController.randomIdGenerator()));
 		
 	}
 
+               public static  int randomIdGenerator()
+                {
+                        Random randomfoodid= new Random();
+                       return randomfoodid.nextInt(10000);
+                }
         @FXML
-        private void foodInventoryInsertedInDatabase(ActionEvent event) throws SQLException {
+        private void foodInventoryInsertedInDatabase(ActionEvent event) throws SQLException, IOException {
            String foodid=food_id.getText();
            String foodname=food_name.getText();
            int  foodquantity=Integer.parseInt(food_quantity.getText());
-           String query="select foodid from canteenapplication.inventorydetails";
-           ResultSet rs=Database.st.executeQuery(query);
-           while(rs.next())
-           {
-           if(foodid.equals(rs.getString(1)))
-           {
-             
-                        Notifications success=Notifications.create();
-                        success.title("Food Id Already exists ");
-	    success.text("Please Enter New Food Id ...");
-                        success.hideAfter(Duration.seconds(2));
-                        success.darkStyle();
-                        success.position(Pos.CENTER);
-                        success.showError();
-           }
-           }
+//           String query="select foodid from canteenapplication.inventorydetails";
+//           ResultSet rs=Database.st.executeQuery(query);
+//           while(rs.next())
+//           {
+//           if(foodid.equals(rs.getString(1)))
+//           {
+//             
+//                        Notifications success=Notifications.create();
+//                        success.title("Food Id Already exists ");
+//	    success.text("Please Enter New Food Id ...");
+//                        success.hideAfter(Duration.seconds(2));
+//                        success.darkStyle();
+//                        success.position(Pos.CENTER);
+//                        success.showError();
+//           }
+//           }
+
            if(Database.addInventory(foodid, foodname, foodquantity))
            {
                    
@@ -80,6 +87,8 @@ public class AddInventoryDetailsController implements Initializable {
                          food_id.setText(null);
                         food_name.setText(null);
                         food_quantity.setText(null);
+                        AnchorPane FoodAdd = FXMLLoader.load(getClass().getResource("AddInventoryDetails.fxml"));
+		inventorydetails.getChildren().setAll(FoodAdd);
            }
            else{
                    

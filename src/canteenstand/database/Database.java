@@ -11,7 +11,10 @@ public class Database {
                     public static String query;
 	public static Connection con;
 	public static Statement st;
-	
+	public static void loadComboBoxForAddFood()
+        {
+                query="select foodname from canteenapplication.inventorydetails";
+        }
 	public static void loginCheck(String username,String password)
 	{
 		query="select * from canteenapplication.adminstandlogin where admin_username='"+username+"' &&admin_ password='"+password+"';";
