@@ -1,1 +1,7 @@
 
+.mainwindow{
+   -fx-alignment: BOTTOM_CENTER;
+}
+.orderwindow{
+-fx-focus-traversable: true;
+}

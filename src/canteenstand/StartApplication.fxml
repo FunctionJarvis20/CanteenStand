@@ -40,7 +40,7 @@
                               <Font size="16.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton layoutX="440.0" layoutY="636.0" onAction="#adminLogin" prefHeight="61.0" prefWidth="113.0" style="-fx-background-radius: 30; -fx-background-color: #00afff;" text="Login">
+                        <JFXButton buttonType="RAISED" layoutX="440.0" layoutY="636.0" onAction="#adminLogin" prefHeight="61.0" prefWidth="113.0" style="-fx-background-radius: 30; -fx-background-color: #00afff;" text="Login">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -59,9 +59,38 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab disable="true" text="Workers">
+            <Tab text="Workers">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <FontAwesomeIconView fontSmoothingType="LCD" glyphName="USER" layoutX="500.0" layoutY="321.0" size="250" stroke="#00afff" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="3.0" wrappingWidth="199.2857208251953">
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" color="#615959" height="35.83" radius="16.6725" spread="0.1" width="32.86" />
+                           </effect>
+                        </FontAwesomeIconView>
+                        <FontAwesomeIconView glyphName="USER" layoutX="379.0" layoutY="458.0" size="35" stroke="#00afff" />
+                        <FontAwesomeIconView glyphName="KEY" layoutX="378.0" layoutY="543.0" size="35" stroke="#00afff" />
+                        <JFXTextField fx:id="staff_username1" focusColor="#1e3989" labelFloat="true" layoutX="440.0" layoutY="424.0" prefHeight="44.0" prefWidth="342.0" promptText="Enter Staff username" unFocusColor="#00afff">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="staff_password1" focusColor="#1e3989" labelFloat="true" layoutX="442.0" layoutY="509.0" prefHeight="44.0" prefWidth="342.0" promptText="Enter staff Password" unFocusColor="#00afff">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton buttonType="RAISED" layoutX="500.0" layoutY="606.0" onAction="#staffLogin" prefHeight="61.0" prefWidth="186.0" style="-fx-background-radius: 30; -fx-background-color: #00afff;" text="Login">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="475.0" layoutY="38.0" prefHeight="60.0" prefWidth="272.0" text="Staff  Login">
+                           <font>
+                              <Font name="Times New Roman" size="54.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="User ">

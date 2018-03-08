@@ -6,6 +6,7 @@
 package canteenstand;
 
 import canteenstand.database.Database;
+import canteenstand.staff.TakeNewOrderController;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
@@ -45,6 +46,10 @@ public class StartApplicationController implements Initializable {
         private AnchorPane adminlogin;
         @FXML
         private AnchorPane adminloginscreen;
+        @FXML
+        private JFXTextField staff_username1;
+        @FXML
+        private JFXTextField staff_password1;
 
         @Override
         public void initialize(URL url, ResourceBundle rb) {
@@ -119,6 +124,65 @@ public class StartApplicationController implements Initializable {
                 primaryStage.setResizable(false);
                 primaryStage.show();
 
+        }
+        TakeNewOrderController tnoc=new TakeNewOrderController();
+        @FXML
+        private void staffLogin(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
+                  String u="";
+               String p="";
+                String s = staff_username1.getText();
+                String s2 = staff_password1.getText();
+              
+                String URL = "jdbc:mysql://localhost:3306/canteenapplication?autoReconnect=true&useSSL=false";
+                String pass = "ActiveJarvis20";
+                String user = "FunctionJarvis20";
+                String query = "SELECT * FROM canteenapplication.staffstandlogin where staff_username='" + s + "' && staff_password='" + s2 + "';";
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection(URL, user, pass);
+                java.sql.Statement st = con.createStatement();
+                ResultSet rs;
+                rs = st.executeQuery(query);
+                while (rs.next()) {
+                        u = rs.getString("staff_username");
+                        p = rs.getString("staff_password");
+                        System.out.println(u + "::" + p);
+                          TakeNewOrderController.staffGet(u,p);
+                }
+
+               if(s.isEmpty() && s2.isEmpty()){
+                        Notifications failed = Notifications.create();
+                        failed.title("LOGIN FAILED ");
+                        failed.text("Incorrect username or password ..............");
+                        failed.hideAfter(Duration.seconds(2));
+                        failed.darkStyle();
+                        failed.position(Pos.CENTER);
+                        failed.showError();
+               }
+               else if (u.equals(s) && p.equals(s2)) {
+                        Notifications success = Notifications.create();
+                        success.title("LOGIN SUCCESSFULL ");
+                        success.text("Staff  Login Successfull ..................");
+                        success.hideAfter(Duration.seconds(2));
+                        success.darkStyle();
+                        success.position(Pos.CENTER);
+                        success.showInformation();
+                      
+                        AnchorPane FoodAdd = FXMLLoader.load(getClass().getResource("/canteenstand/staff/MainStaffUI.fxml"));
+		adminloginscreen.getChildren().setAll(FoodAdd);
+                     
+                }
+                else{
+                          Notifications failed = Notifications.create();
+                        failed.title("LOGIN FAILED ");
+                        failed.text("Incorrect username or password ..............");
+                        failed.hideAfter(Duration.seconds(2));
+                        failed.darkStyle();
+                        failed.position(Pos.CENTER);
+                        failed.showError();
+                }
+          
+                 st.close();
+                con.close();
         }
 
 }

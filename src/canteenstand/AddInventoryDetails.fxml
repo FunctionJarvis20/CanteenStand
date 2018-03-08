@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="inventorydetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f8e3b7;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteenstand.AddInventoryDetailsController">
+<AnchorPane fx:id="inventorydetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1220.0" style="-fx-background-color: #f8e3b7;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteenstand.AddInventoryDetailsController">
    <children>
-      <ImageView fitHeight="437.0" fitWidth="1269.0" layoutX="54.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-69.0" AnchorPane.topAnchor="-21.0">
+      <ImageView fitHeight="444.0" fitWidth="1220.0" layoutX="54.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-21.0">
          <image>
             <Image url="@resource/AddInventoryDetails.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="14.0" prefHeight="71.0" prefWidth="872.0" text="Add Inventory Details" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="164.0" layoutY="14.0" prefHeight="71.0" prefWidth="872.0" text="Add Inventory Details" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
          <font>
             <Font name="Times New Roman" size="72.0" />
          </font>
@@ -116,7 +116,7 @@
             <FontAwesomeIconView glyphName="HAND_ALT_RIGHT" layoutX="100.0" layoutY="300.0" size="20" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <JFXButton layoutX="319.0" layoutY="158.0" onAction="#checkAvailableStock" prefHeight="47.0" prefWidth="502.0" text="Click Here To Check Availabel Stock">
+      <JFXButton layoutX="370.0" layoutY="158.0" onAction="#checkAvailableStock" prefHeight="47.0" prefWidth="502.0" text="Click Here To Check Availabel Stock">
          <font>
             <Font size="20.0" />
          </font>

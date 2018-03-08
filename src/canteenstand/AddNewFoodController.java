@@ -68,8 +68,8 @@ public class AddNewFoodController implements Initializable {
 
         @Override
         public void initialize(URL arg0, ResourceBundle arg1) {
-                AddButton.setDisable(true);
-                 f_item_no.setText(Integer.toString(AddNewFoodController.randomIdGenerator()));
+               
+                f_item_no.setText(Integer.toString(AddNewFoodController.randomIdGenerator()));
                 Database db = new Database();
                 String query1 = "select foodname from canteenapplication.inventorydetails";
                 try {
@@ -86,16 +86,15 @@ public class AddNewFoodController implements Initializable {
         }
         String name;
 
-        
-               public static  int randomIdGenerator()
-                {
-                        Random randomfoodid= new Random();
-                       return randomfoodid.nextInt(10000);
-                }
-               @FXML
+        public static int randomIdGenerator() {
+                Random randomfoodid = new Random();
+                return randomfoodid.nextInt(10000);
+        }
+
+        @FXML
         void foodInsertedInDatabase(ActionEvent event) {
                 try {
-                      
+
                         food_item_no = Integer.parseInt(f_item_no.getText());
                         food_category = f_category.getText();
                         food_item_name = f_item_name.getText();
@@ -117,7 +116,7 @@ public class AddNewFoodController implements Initializable {
                         pt.setInt(4, food_item_amount);
                         pt.setString(5, required_product_id);
                         pt.setString(6, required_product_quantity);
-                               pt.setString(7, required_product_name);
+                        pt.setString(7, required_product_name);
                         int execute = pt.executeUpdate();
                         if (execute == 1) {
                                 System.out.println("row Inserted Perfectly");
@@ -135,9 +134,9 @@ public class AddNewFoodController implements Initializable {
                                 f_item_amount.setText("");
                                 r_product_id.setText("");
                                 r_product_quantity.setText("");
-                        
-                                  AnchorPane FoodAdd = FXMLLoader.load(getClass().getResource("AddNewFoodScreen.fxml"));
-                pane2.getChildren().setAll(FoodAdd);
+
+                                AnchorPane FoodAdd = FXMLLoader.load(getClass().getResource("AddNewFoodScreen.fxml"));
+                                pane2.getChildren().setAll(FoodAdd);
                         } else {
                                 System.out.println("row Not Affected");
                         }
@@ -171,7 +170,7 @@ public class AddNewFoodController implements Initializable {
                         while (rs.next()) {
                                 r_product_id.setText(rs.getString("foodid"));
                         }
-                       
+
                 } catch (SQLException ex) {
                         Logger.getLogger(AddNewFoodController.class.getName()).log(Level.SEVERE, null, ex);
                 }

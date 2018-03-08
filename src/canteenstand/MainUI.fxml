@@ -1,57 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="FoodAdd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteenstand.MainUIController">
+<AnchorPane fx:id="FoodAdd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1220.0" style="-fx-background-color: white;" styleClass="mainwindow" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="canteenstand.MainUIController">
    <children>
-      <VBox layoutX="71.0" layoutY="54.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <MenuBar blendMode="MULTIPLY" prefHeight="31.0" prefWidth="874.0" style="-fx-background-color: cyan;">
-              <menus>
-                <Menu mnemonicParsing="false" text="Add Details">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#addInventoryDetails" text="Inventory Details" />
-                        <MenuItem mnemonicParsing="false" onAction="#AddNewFood" text="Add New Food" />
-                        <MenuItem mnemonicParsing="false" text="Add New Offers" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Remove Food ">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Remove food using ID" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Update Inventory Details" />
-                  <Menu mnemonicParsing="false" text="Upcoming Orders &amp; Details">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Current Orders" />
-                     </items>
-                  </Menu>
-              </menus>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
-               <effect>
-                  <Glow level="0.25" />
-               </effect>
-            </MenuBar>
-            <JFXButton buttonType="RAISED" onAction="#logout" prefHeight="45.0" prefWidth="109.0" ripplerFill="#d71010" style="-fx-background-color: cyan; -fx-background-radius: 90;" text="LogOut" textFill="#da1414">
-               <VBox.margin>
-                  <Insets left="1090.0" top="715.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </VBox>
+      <MenuBar blendMode="MULTIPLY" prefHeight="31.0" prefWidth="1220.0" style="-fx-background-color: #00afff;" styleClass="mainwindow" stylesheets="@application.css">
+         <menus>
+            <Menu mnemonicParsing="false" text="Add Details">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#addInventoryDetails" text="Inventory Details" />
+                  <MenuItem mnemonicParsing="false" onAction="#AddNewFood" text="Add New Food" />
+                  <MenuItem mnemonicParsing="false" onAction="#addComboOffers" text="Add Combo Packs" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Remove Food ">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#removeFood" text="RemoveFood" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Update Inventory Details">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#updateInventory" text="Update Inventory" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Staff Details">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Create New Staff" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Admin Details ">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Create New Admin " />
+                  <MenuItem mnemonicParsing="false" text="Logout" />
+               </items>
+            </Menu>
+         </menus>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </MenuBar>
+      <JFXButton buttonType="RAISED" layoutX="1097.0" layoutY="761.0" onAction="#logout" prefHeight="45.0" prefWidth="109.0" ripplerFill="#d71010" style="-fx-background-color: #00afff; -fx-background-radius: 90;" text="LogOut" textFill="#da1414">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

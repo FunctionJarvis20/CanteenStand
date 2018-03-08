@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" fx:id="customerAdd" prefHeight="820.0" prefWidth="1220.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="canteenstand.staff.MainStaffUIController">
+   <children>
+      <MenuBar blendMode="MULTIPLY" prefHeight="31.0" prefWidth="1220.0" style="-fx-background-color: #00afff;" styleClass="mainwindow" stylesheets="@../application.css">
+         <menus>
+            <Menu mnemonicParsing="false" text="Take Order">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#takeNewOrder" text="Take Order Now" />
+                  <MenuItem mnemonicParsing="false" text="Online Orders" />
+               </items>
+            </Menu>
+         </menus>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </MenuBar>
+   </children>
+</AnchorPane>
