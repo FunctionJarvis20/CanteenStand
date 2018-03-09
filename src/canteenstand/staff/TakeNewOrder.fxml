@@ -247,8 +247,13 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <Separator layoutX="1323.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="947.0" prefWidth="0.0" />
-      <Separator layoutX="1421.0" layoutY="7.0" orientation="VERTICAL" prefHeight="947.0" prefWidth="0.0" />
+      <Separator layoutX="1323.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="947.0" prefWidth="20.0" />
+      <Separator layoutX="1414.0" layoutY="7.0" orientation="VERTICAL" prefHeight="812.0" prefWidth="13.0" />
       <Separator layoutX="1008.0" layoutY="7.0" orientation="VERTICAL" prefHeight="947.0" prefWidth="0.0" />
+      <JFXButton buttonType="RAISED" layoutX="1376.0" layoutY="855.0" onAction="#calculateTotalAmount" prefHeight="55.0" prefWidth="172.0" ripplerFill="RED" style="-fx-background-color: #fbdede;" text="Calculate Amount">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

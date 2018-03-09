@@ -85,7 +85,7 @@ public class TakeNewOrderController implements Initializable {
   ObservableList<String> listviewfoodname=FXCollections.observableArrayList();
   ObservableList<Integer> listviewfoodquantity=FXCollections.observableArrayList();
     ObservableList<Integer> listviewfoodamount=FXCollections.observableArrayList();
-    
+     ObservableList<Integer> prices;
   
         @FXML
         private JFXListView<String> allfood;
@@ -193,10 +193,11 @@ public class TakeNewOrderController implements Initializable {
         private void addToList(ActionEvent event) throws SQLException {
                 String foodall=foodname.getValue();
                 int quantity=Integer.parseInt(foodquantity.getText());
-                int amount=0;
+               
                 String category=foodcategory.getValue();
                 String query="select food_item_amount from canteenapplication.adminfooddetails where food_item_category='"+category+"' && food_item_name='"+foodall+"'";
                ResultSet rs=Database.st.executeQuery(query);
+               int amount=0;
                while(rs.next())
                {
                        amount=rs.getInt("food_item_amount");
@@ -225,6 +226,7 @@ public class TakeNewOrderController implements Initializable {
                 allfood.getItems().remove(select);
                 allquantity.getItems().remove(index);
                 allamount.getItems().remove(index);
+                prices.clear();
                 }
         }
 
@@ -261,6 +263,16 @@ public class TakeNewOrderController implements Initializable {
                         foodname.setItems(list2);
 
                 }
+        }
+int finalamount;
+        @FXML
+        private void calculateTotalAmount(ActionEvent event) {
+                prices=allamount.getItems();
+                for(Integer price : prices)
+                {
+                      finalamount=finalamount+price;
+                }
+                totalamount.setText(Integer.toString(finalamount));
         }
       
 
